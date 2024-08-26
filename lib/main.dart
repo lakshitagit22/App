@@ -27,7 +27,7 @@ class WelcomePage extends StatelessWidget {
           children: [
             Text(
               'Greetings, Developer!',
-              style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold), // Adjust font size as needed
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold), // Adjust font size as needed
             ),
           ],
         ),
@@ -37,8 +37,18 @@ class WelcomePage extends StatelessWidget {
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(1.0), // Height of the bottom border line
           child: Container(
-            color: Colors.grey[300], // Color of the bottom border line
             height: 1.0, // Thickness of the bottom border line
+            decoration: BoxDecoration(
+              color: Colors.grey[300], // Color of the bottom border line
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.4),
+                  spreadRadius: 1,
+                  blurRadius: 3,
+                  offset: Offset(0, 1), // Shadow position
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -48,18 +58,25 @@ class WelcomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              // Image.asset('assets/images/welcome_background.png'), // Image asset
-              Image(
-                image:AssetImage('assets/images/welcome_background.png'),
+              // Reduced padding to lift the image and text closer together
+              Padding(
+                padding: const EdgeInsets.only(top: 2.0), // Reduced from 20.0
+                child: Image(
+                  image: AssetImage('assets/images/welcome_background.png'),
+                ),
               ),
+              SizedBox(height: 1), // Reduced space between image and text
               Text.rich(
                 TextSpan(
                   children: [
                     TextSpan(
                       text: 'We\'re excited to have you here!\n',
-                      style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                     ),
-
+                    TextSpan(
+                      text: '\n', // Use a newline or space character
+                      style: TextStyle(fontSize: 0), // Zero size to make it invisible
+                    ),
                     TextSpan(
                       text: 'This app is crafted to teach you the\n ',
                       style: TextStyle(fontSize: 18, color: Colors.grey),
@@ -69,13 +86,14 @@ class WelcomePage extends StatelessWidget {
                       style: TextStyle(fontSize: 18, color: Colors.grey),
                     ),
                     TextSpan(
-                      text: 'building mobile application using Flutter.!',
+                      text: 'building mobile application using Flutter!',
                       style: TextStyle(fontSize: 18, color: Colors.grey),
                     ),
                   ],
                 ),
                 textAlign: TextAlign.center, // Optional: center the entire text block
-              )
+              ),
+              SizedBox(height: 100), // Adjust this value as needed for spacing below the text
             ],
           ),
         ),
