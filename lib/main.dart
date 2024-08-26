@@ -80,6 +80,7 @@ class WelcomePage extends StatelessWidget {
                     ),
                     TextSpan(
 
+
                       text: 'This app is crafted to teach you the\n ',
                       style: TextStyle(fontSize: 18, color: Colors.grey),
                     ),
