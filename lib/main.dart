@@ -79,6 +79,7 @@ class WelcomePage extends StatelessWidget {
                       style: TextStyle(fontSize: 6), // Zero size to make it invisible
                     ),
                     TextSpan(
+
                       text: 'This app is crafted to teach you the\n ',
                       style: TextStyle(fontSize: 18, color: Colors.grey),
                     ),
