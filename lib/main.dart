@@ -65,7 +65,7 @@ class WelcomePage extends StatelessWidget {
                   image: AssetImage('assets/images/welcome_background.png'),
                 ),
               ),
-              SizedBox(height: 1), // Reduced space between image and text
+              SizedBox(height: 10), // Reduced space between image and text
               Text.rich(
                 TextSpan(
                   children: [
@@ -74,8 +74,9 @@ class WelcomePage extends StatelessWidget {
                       style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                     ),
                     TextSpan(
+
                       text: '\n', // Use a newline or space character
-                      style: TextStyle(fontSize: 0), // Zero size to make it invisible
+                      style: TextStyle(fontSize: 6), // Zero size to make it invisible
                     ),
                     TextSpan(
                       text: 'This app is crafted to teach you the\n ',
