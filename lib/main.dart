@@ -13,7 +13,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: WelcomePage(), // Use WelcomePage from pages directory
+      home: WelcomePage(),
+      // Use WelcomePage from pages directory
+
     );
   }
 }
